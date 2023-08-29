@@ -1,0 +1,621 @@
+/* global */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* header */
+
+header {
+    padding: 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo a {
+    font-size: 30px;
+    font-family: Arial;
+    text-decoration: none;
+    color: #000;
+    display: block;
+    transition: .4s ease;
+}
+
+.header__logo a:hover {
+    animation-name: scale-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-duration: .8s;
+
+    opacity: .6;
+}
+
+header nav ul {
+    display: flex;
+    gap: 40px;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    list-style: none;
+    padding: 15px 35px;
+    position: relative;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+header nav ul li div {
+    height: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    transition: .2s ease;
+    border-radius: 8px;
+}
+
+header nav ul li:hover div {
+    background: #232323;
+    height: 100%;
+}
+
+header nav ul li a {
+    color: #000;
+    text-decoration: none;
+    font-family: "Trebuchet MS";
+    font-size: 18px;
+    z-index: 1;
+    position: relative;
+}
+
+
+header nav ul li:hover a {
+    color: #fff !important;
+    animation-name: appear;
+    animation-fill-mode: forwards;
+    animation-duration: .4s;
+    transition: .4s ease;
+}
+
+/* hero */
+
+.hero__image img {
+    width: 240px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 64px;
+
+    animation-name: scale-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-duration: .8s;
+}
+
+.hero {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    /* padding-bottom: 134px; */
+}
+
+.hero__text {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.hero__text span {
+    font-size: 105px;
+    font-family: Verdana;
+    font-weight: 200;
+    color: rgba(0, 0, 0, .85);
+}
+
+.hero__text span i {
+    font-family: "Trebuchet MS", sans-serif;
+    transform: skewX(-5deg);
+    display: inline-block;
+    font-weight: lighter;
+    color: rgba(0, 0, 0, 1);
+}
+
+.hero__text-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    font-size: 110px;
+    line-height: 57px;
+    font-family: Trebuchet MS;
+    color: rgba(0, 0, 0, .85);
+}
+
+/* roadmap */
+
+
+/* ad */
+
+.ad {
+    overflow: hidden;
+}
+
+.ad__slider {
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+    height: 62vh;
+    width: 400vw;
+    position: relative;
+
+    animation-name: ad-slider;
+    animation-iteration-count: infinite;
+    animation-duration: 60s;
+    animation-fill-mode: both;
+}
+
+.ad__slider--item {
+    width: 100vw;
+    height: 62vh;
+    object-fit: cover;
+    position: relative;
+}
+
+.ad-1 {
+    background: url(../img/game-rating.jpg) no-repeat center;
+    background-attachment: fixed;
+}
+
+.ad-2 {
+    background: url(../img/game-versions.jpg) no-repeat center;
+    background-attachment: fixed;
+}
+
+.ad-3 {
+    background: url(../img/player-profile.jpg) no-repeat center;
+    background-attachment: fixed;
+}
+
+.ad-4 {
+    background: url(../img/players-leaderboard.jpg) no-repeat center;
+    background-attachment: fixed;
+}
+
+/* featured */
+
+.featured {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    background: #000;
+    padding: 40px;
+}
+
+.featured__heading h2 {
+    color: #fff;
+    font-size: 120px;
+    font-family: Verdana;
+}
+
+.featured__heading h2 i {
+    font-style: italic;
+    opacity: .9;
+    transform: skewX(-14deg);
+    font-family: "Trebuchet MS";
+}
+
+.featured__content--item img {
+    width: 100%;
+    height: 100%;
+    transition: .4s ease;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.featured__content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px 0;
+}
+
+.featured__content--item {
+    flex: 1 0 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 51px;
+}
+
+.featured__content--item.nth-child-2 {
+    margin-top: 78px;
+}
+
+.featured__content--item h4 {
+    color: #fff;
+    font-size: 50px;
+    font-family: Trebuchet MS;
+    margin: 0;
+}
+
+.featured__content--item figure {
+    padding: 0;
+    margin: 0;
+    width: 89%;
+    height: 70vh;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.featured__content--item:hover figure img {
+    transform: scale(1.4);
+}
+
+/* company */
+
+
+.company {
+    padding: 143px 0px;
+}
+
+.company .container {
+    display: flex;
+    align-items: center;
+    gap: 10vw;
+    max-width: 1330px;
+}
+
+.company__info {
+    display: flex;
+    flex-direction: column;
+    font-size: 43px;
+    font-family: Trebuchet MS;
+    gap: 42px;
+}
+
+.btn-company {
+    color: #000;
+    text-decoration: none;
+    border: 1px solid #000;
+    padding: 40px 60px;
+    width: 55%;
+    border-radius: 28px;
+    font-size: 31px;
+    transition: .6s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.btn-company:hover {
+    animation-name: scale-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+}
+
+.btn-company .waves {
+    background: #232323;
+    color: #fff;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    height: 0%;
+    width: 100%;
+
+    border-top-left-radius: 200px;
+    border-top-right-radius: 200px;
+    transition: .2s ease;
+    z-index: 0;
+}
+
+.btn-company:hover .waves {
+    height: 100%;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.btn-company .text {
+    z-index: 1;
+    position: relative;
+}
+
+.btn-company:hover .text {
+    color: #fff;
+
+    animation-name: appear;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-duration: .4s;
+}
+
+/* graph */
+
+.graph .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.graph {min-height: 600px;padding: 80px 0px;}
+
+.graph__left h2 {
+    font-family: Verdana;
+    font-size: 76px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+}
+
+.graph__left p {
+    font-size: 39px;
+    font-family: Trebuchet MS;
+    line-height: 46px;
+    text-transform: lowercase;
+}
+
+.graph__left h2 i {
+    font-family: Trebuchet MS;
+}
+
+.graph__image img {width: 100%; height: 100%; }
+
+.graph__left--heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 90px;
+}
+
+.graph__left--heading span {
+    display: inline;
+    font-size: 150px;
+}
+
+
+
+footer {
+    padding: 40px;
+    background: #000;
+    color: #fff;
+    font-size: 35px;
+    font-family: Verdana;
+}
+
+/* COMPANY logotype */
+
+.company__logo {
+    perspective: 1000px;
+}
+.spinning-logotype{
+    font-size: 255px;
+    font-family: Trebuchet MS;
+    text-align: center;
+    animation-name: spin, depth;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+#spinner::before,
+#spinner::after {
+    content: "PM";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform: rotateY(0.5deg);
+    transform-origin: 0 50%;
+}
+#spinner::after {
+    transform: rotateY(-0.5deg);
+    transform-origin: 100% 50%;
+}
+
+/* keyframes */
+
+@keyframes spin {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(-360deg); }
+}
+@keyframes depth {
+    0% { text-shadow: 0 0 black; }
+    25% { text-shadow: 1px 0 black, 3px 0 black, 5px 0 black, 7px 0 black, 9px 0 black, 11px 0 black; }
+    50% { text-shadow: 0 0 black; }
+    75% { text-shadow: -1px 0 black, -3px 0 black, -5px 0 black, -7px 0 black, -9px 0 black, -11px 0 black; }
+    100% { text-shadow: 0 0 black; }
+}
+
+@keyframes appear {
+    0% {
+        transform: translateY(0%);
+    }
+
+    25% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    50% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes ad-slider {
+    0% {
+        left: 0;
+    }
+
+    25% {
+        left: -200vw;
+    }
+
+    45% {
+        left: -100vw;
+    }
+
+    65% {
+        left: -0vw;
+    }
+
+    75% {
+        left: -100vw;
+    }
+
+    85% {
+        left: -200vw;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+
+@keyframes scale-in-out {
+    0% {
+        transform: scale(1.2);
+    }
+
+    25% {
+        transform: scale(1.1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes body-opacity {
+    0% {
+        opacity: 0;
+        filter: grayscale(100%);
+    }
+
+    100% {
+        opacity: 1;
+        filter: grayscale(0);
+    }
+}
+
+/* media queries */
+
+@media (max-width: 1024px) {
+    header nav {
+        display: none;
+    }
+
+    .hero {
+        padding: 40px;
+    }
+
+    .hero__text span {
+        font-size: 40px;
+    }
+
+    .hero__text-content {
+        font-size: 28px;
+        line-height: 24px;
+        gap: 21px;
+    }
+
+    .hero__image img {
+        width: 128px;
+        height: 64px;
+    }
+
+    .company {
+        padding: 58px 20px;
+    }
+
+    .spinning-logotype {
+        font-size: 85px;
+        text-align: left !important;
+    }
+
+    .company .container {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+
+    .company__info {
+        font-size: 24px;
+    }
+
+    .btn-company {
+    }
+
+    .featured__heading h2 {
+        font-size: 39px;
+    }
+
+    .featured__content {
+        flex-direction: column;
+        /* padding: 0; */
+        gap: 40px;
+    }
+
+    .featured__content--item {
+        flex: 1 0 auto !important;
+        margin-bottom: 0;
+    }
+
+    .featured__content--item figure {
+        width: 100%;
+        height: 43vh;
+    }
+
+    .featured__content--item h4 {
+        font-size: 30px;
+    }
+
+    .graph__left h2 {
+        font-size: 25px;
+    }
+
+    .graph {
+        padding: 40px;
+    }
+
+    .graph .company__logo .spinning-logotype {
+        font-size: 43px;
+    }
+
+    .graph__left p {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .graph__left--heading {
+        margin-bottom: 39px;
+    }
+
+    footer {
+        font-size: 15px;
+    }
+}
