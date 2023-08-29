@@ -106,7 +106,7 @@ header nav ul li:hover a {
 }
 
 .hero {
-    height: 60vh;
+    height: 700px;
     display: flex;
     align-items: center;
     /* padding-bottom: 134px; */
@@ -118,14 +118,16 @@ header nav ul li:hover a {
     flex-direction: column;
 }
 
-.hero__text span {
+.hero__text h1 {
     font-size: 105px;
     font-family: Verdana;
     font-weight: 200;
     color: rgba(0, 0, 0, .85);
+    margin-bottom: 0;
+    margin-top: 0;
 }
 
-.hero__text span i {
+.hero__text h1 i {
     font-family: "Trebuchet MS", sans-serif;
     transform: skewX(-5deg);
     display: inline-block;
@@ -241,7 +243,7 @@ header nav ul li:hover a {
     margin-top: 78px;
 }
 
-.featured__content--item h4 {
+.featured__content--item span {
     color: #fff;
     font-size: 50px;
     font-family: Trebuchet MS;
@@ -255,6 +257,7 @@ header nav ul li:hover a {
     height: 70vh;
     overflow: hidden;
     border-radius: 16px;
+    background: #fff;
 }
 
 .featured__content--item:hover figure img {
